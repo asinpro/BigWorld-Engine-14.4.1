@@ -292,7 +292,7 @@ bool EffectCompiler::getIncludes( const BW::string& resourceID,
 	if (FAILED( hr ))
 	{
 		ERROR_MSG( "%s\n", pCompilationErrors ? 
-			pCompilationErrors->GetBufferPointer() : "" );
+			static_cast<char*>(pCompilationErrors->GetBufferPointer()) : "" );
 
 		return false;
 	}
@@ -387,7 +387,7 @@ BinaryPtr EffectCompiler::compile( const BW::string& resourceID,
 		if (FAILED( hr ))
 		{
 			ERROR_MSG( "%s\n", pCompilationErrors ? 
-				pCompilationErrors->GetBufferPointer() : "" );
+				static_cast<char*>(pCompilationErrors->GetBufferPointer()) : "" );
 
 			if (outResult)
 			{

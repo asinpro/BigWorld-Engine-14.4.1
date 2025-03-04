@@ -1,0 +1,1 @@
+server_template_centos7.spec

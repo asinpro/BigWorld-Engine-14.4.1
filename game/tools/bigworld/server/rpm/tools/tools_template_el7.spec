@@ -1,0 +1,1 @@
+tools_template_centos7.spec
